@@ -4,7 +4,6 @@ var fileText = fs.readFileSync(process.argv[2],'utf-8');
 var lodash = require('lodash');
 
 var columns_indexes = (process.argv).slice(3);
-console.log("Filtering by these indexes =>" ,columns_indexes);
 
 var papaparse = require('papaparse');
 var data = papaparse.parse(fileText).data;
@@ -16,5 +15,5 @@ var filterData = function(record){
 
 var reducedData = data.map(filterData);
 
-console.log(reducedData);
+console.log(papaparse.unparse(reducedData));
 
