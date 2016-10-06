@@ -9,11 +9,9 @@ var papaparse = require('papaparse');
 var data = papaparse.parse(fileText).data;
 
 var filterData = function(record){
-	var filterData = [];
 	return lodash.pullAt(record, columns_indexes);
 }
 
 var reducedData = data.map(filterData);
-
 console.log(papaparse.unparse(reducedData));
 
