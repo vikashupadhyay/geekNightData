@@ -12,6 +12,10 @@ var filterData = function(record){
 	return lodash.pullAt(record, columns_indexes);
 }
 
-var reducedData = data.map(filterData);
+var reduceData = function(entry){
+	return lodash.pullAll(entry, ['']).length>0;
+}
+
+var reducedData = data.map(filterData).filter(reduceData);
 console.log(papaparse.unparse(reducedData));
 
