@@ -16,6 +16,11 @@ var reduceData = function(entry){
 	return lodash.pullAll(entry, ['']).length>0;
 }
 
+var languageData = function(entry){
+	return (entry, '')
+}
+
 var reducedData = data.map(filterData).filter(reduceData);
-console.log(papaparse.unparse(reducedData));
+console.log(reducedData);	
+// console.log(papaparse.unparse(reducedData));
 
